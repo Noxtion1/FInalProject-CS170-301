@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PC Builds Comparison</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: sans-serif;
+            background: #f0f2f5;
+            padding: 2rem 1rem;
+        }
+
+        /* Main bubble (pretend company summary for looks) on top middle */
+        .summary-bubble {
+            max-width: 800px;
+            margin: 0 auto 2rem auto;
+            background: linear-gradient(135deg, #631f16, #864a3f);
+            color: white;
+            padding: 1.5rem 2rem;
+            border-radius: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+        }
+
+        .summary-bubble h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .summary-bubble p {
+            font-size: 1rem;
+            line-height: 1.5;
+            opacity: 0.95;
+        }
+
+        .summary-bubble .pc-tiers {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .summary-bubble .tier {
+            background: rgba(255,255,255,0.15);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.85rem;
+            font-weight: bold;
+        }
+
+        /* CSS Grid layout */
+        .grid {
+            display: grid;
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            grid-template-columns: 1fr;
+        }
+
+        /* Card styles */
+        .card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        /* Card hover effect (scale/shadow) */
+        .card:hover {
+            transform: scale(1.03);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+
+        .card h3 {
+            font-size: 1.6rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .price {
+            color: #7bff7b;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .desc {
+            color: #555;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+
+        .features {
+            list-style: none;
+            margin: 1rem 0 1.5rem 0;
+        }
+
+        .features li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .features li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #da552d;
+        }
+
+        button {
+            width: 100%;
+            padding: 0.7rem;
+            background: #b8352b;
+            color: white;
+            border: none;
+            border-radius: 2rem;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        /* Button hover effect */
+        button:hover {
+            background-color: #00b336;
+        }
+
+        /* Media query fucntion for large screens, turns into 3 columns side-by-side */
+        /*i believe this is implemented correctly*/
+        @media (min-width: 768px) {
+            .grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Main bubble summary on top middle -->
+    <div class="summary-bubble">
+        <h2>Jaytee's LLC PCs</h2>
+        <p>Here at Jaytee LLC we sell computers at three major price points.<br>From everyday taskwork to maximum power for high end gaming.</p>
+    </div>
+
+    <!-- the 3 layer Grid of PC bubbles -->
+    <div class="grid">
+        <!-- Bubble 1: Entry Level PC -->
+        <div class="card">
+            <h3>Entry Level PC</h3>
+            <div class="price">$500</div>
+            <div class="desc">Great for everyday tasks and light work</div>
+            <ul class="features">
+                <li>AMD Ryzen 3 3200G</li>
+                <li>8GB DDR4 RAM</li>
+                <li>256GB SSD</li>
+                <li>Integrated Graphics</li>
+            </ul>
+            <button>Choose</button>
+        </div>
+
+        <!-- Bubble 2: Intermediate Level PC -->
+        <div class="card">
+            <h3>Intermediate PC</h3>
+            <div class="price">$1500</div>
+            <div class="desc">Perfect for gaming and productivity</div>
+            <ul class="features">
+                <li>Intel i5-13400F</li>
+                <li>16GB DDR5 RAM</li>
+                <li>1TB NVMe SSD</li>
+                <li>RTX 4060 8GB</li>
+            </ul>
+            <button>Choose</button>
+        </div>
+
+        <!-- Bubble 3: High End PC -->
+        <div class="card">
+            <h3>High End PC</h3>
+            <div class="price">$3000</div>
+            <div class="desc">Ultimate performance for 4K gaming & streaming</div>
+            <ul class="features">
+                <li>AMD Ryzen 9 7900X</li>
+                <li>32GB DDR5 RAM</li>
+                <li>2TB NVMe SSD</li>
+                <li>RTX 4080 16GB</li>
+            </ul>
+            <button>Choose</button>
+        </div>
+    </div>
+</body>
+</html>
